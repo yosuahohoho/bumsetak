@@ -13,18 +13,31 @@ body {
 }
 
 .App {
-  height: 100vh;
-  padding: 1rem;
-  background-color: #282c34;
-  color: white;
-  text-align: center;
+  margin: 0 auto;
+  max-width: 760px;
 }
 
-.container {
-  margin-top: 5rem;
+header {
+ text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  justify-content: center;
+  grid-gap: 1rem;
+  padding: 1rem;
+}
+
+.pad > button {
+  padding: 1.5rem 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 footer {
-  margin-top: 8rem;
+  margin-top: 7rem;
+  text-align: center;
+  color: #444;
   font-size: 0.875rem;
 }

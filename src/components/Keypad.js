@@ -1,17 +1,19 @@
 import React from 'react'
 
-const Keypad = () => {
+const Keypad = (props) => {
 
-  const handleClick = (event) => {
-    event.preventDefault()
-    const audio = document.querySelector('audio')
+  const handleClick = (e) => {
+    e.preventDefault()
+    const audio = document.querySelector(`#${props.bank.keyTrigger}`)
+    
+    audio.currentTime = 0
     audio.play()
   }
 
   return (
-    <div className='keypad'>
-      <button onClick={handleClick}>A</button>
-      <audio src='https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3' />
+    <div className='pad'>
+      <audio src={props.bank.url} id={props.bank.keyTrigger} />
+      <button onClick={handleClick}>{ props.bank.keyTrigger }</button>
     </div>
   )
 }
