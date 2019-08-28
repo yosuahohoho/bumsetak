@@ -16,6 +16,7 @@ body {
 .App {
   margin: 0 auto;
   max-width: 760px;
+  padding: 1rem;
 }
 
 header {
@@ -49,7 +50,8 @@ header {
 }
 
 footer {
-  margin-top: 5rem;
+  margin-top: 4rem;
+  padding: 0.8rem;
   text-align: center;
   color: #444;
   font-size: 0.875rem;
