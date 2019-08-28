@@ -14,6 +14,7 @@ const Keypad = (props) => {
     <div className='pad'>
       <audio src={props.bank.url} id={props.bank.keyTrigger} />
       <button onClick={handleClick}>{ props.bank.keyTrigger }</button>
+      <span>{props.bank.id}</span>
     </div>
   )
 }

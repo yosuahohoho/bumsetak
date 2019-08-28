@@ -10,6 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #212121;
 }
 
 .App {
@@ -19,14 +20,20 @@ body {
 
 header {
  text-align: center;
+ color: #fff;
 }
 
 .board {
+  margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 100px);
   justify-content: center;
   grid-gap: 1rem;
   padding: 1rem;
+}
+
+.pad {
+  text-align: center;
 }
 
 .pad > button {
@@ -35,8 +42,14 @@ header {
   cursor: pointer;
 }
 
+.pad > span {
+  display: block;
+  color: #fff;
+  margin-top: 0.5rem;
+}
+
 footer {
-  margin-top: 7rem;
+  margin-top: 5rem;
   text-align: center;
   color: #444;
   font-size: 0.875rem;
