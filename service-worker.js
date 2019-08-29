@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/bumsetak/precache-manifest.0289aee6e46c6d2d21a0a2493ee95101.js"
+  "/bumsetak/precache-manifest.a264940773a0a01e5fcecd8a01a63802.js"
 );
 
 self.addEventListener('message', (event) => {
