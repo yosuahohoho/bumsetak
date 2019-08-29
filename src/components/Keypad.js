@@ -1,18 +1,19 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 const Keypad = (props) => {
 
+  const audioRef = useRef(null)
+
   const handleClick = (e) => {
     e.preventDefault()
-    const audio = document.querySelector(`#${props.bank.keyTrigger}`)
     
-    audio.currentTime = 0
-    audio.play()
+    audioRef.current.currentTime = 0
+    audioRef.current.play()
   }
 
   return (
     <div className='pad'>
-      <audio src={props.bank.url} id={props.bank.keyTrigger} />
+      <audio ref={audioRef} src={props.bank.url} id={props.bank.keyTrigger} />
       <button onClick={handleClick}>{ props.bank.keyTrigger }</button>
       <span>{props.bank.id}</span>
     </div>
