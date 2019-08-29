@@ -61,7 +61,7 @@ const Board = () => {
     }
   ]
   
-  let keypads = banksOne.map(bank => <Keypad bank={bank} />)
+  let keypads = banksOne.map(bank => <Keypad bank={bank} key={bank.keyCode} />)
 
   return (
     <div className='board'>
