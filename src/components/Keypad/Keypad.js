@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react'
+import styles from './keypad.module.css'
 
 const Keypad = props => {
   const audioRef = useRef(null)
@@ -24,10 +25,19 @@ const Keypad = props => {
   }
 
   return (
-    <div className='pad'>
-      <audio ref={audioRef} src={props.bank.url} id={props.bank.keyCode} />
-      <button onClick={handleClick}>{props.bank.keyTrigger}</button>
-      <span>{props.bank.id}</span>
+    <div className={ styles.center }>
+      <audio 
+        ref={audioRef} 
+        src={props.bank.url} 
+        id={props.bank.keyCode}
+        />
+      <button 
+        onClick={handleClick}
+        className={ styles.button }
+      >
+        {props.bank.keyTrigger}
+      </button>
+      <span className={ styles.span }>{props.bank.id}</span>
     </div>
   )
 }

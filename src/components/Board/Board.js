@@ -1,6 +1,7 @@
 import React from 'react'
 
-import Keypad from './Keypad'
+import Keypad from '../Keypad/Keypad'
+import styles from './board.module.css'
 
 const Board = () => {
   const banksOne = [
@@ -63,7 +64,7 @@ const Board = () => {
   let keypads = banksOne.map(bank => <Keypad bank={bank} key={bank.keyCode} />)
 
   return (
-    <div className='board'>
+    <div className={ styles.board }>
       { keypads }
     </div>
   )

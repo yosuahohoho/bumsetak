@@ -1,0 +1,15 @@
+.center {
+  text-align: center;
+}
+
+button {
+  padding: 1.5rem 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+span {
+  display: block;
+  color: #fff;
+  margin-top: 0.5rem;
+}
