@@ -6,13 +6,13 @@ const Keypad = props => {
 
   useEffect(() => {
     document.addEventListener('keydown', e => {
-      if (e.keyCode === props.bank.keyCode) {
+      if (e.keyCode === props.audio.keyCode) {
         playSound()
       }
     })
 
     return document.removeEventListener('keydown', playSound)
-  }, [props.bank.keyCode])
+  }, [props.audio.keyCode])
 
   const handleClick = e => {
     e.preventDefault()
@@ -27,17 +27,16 @@ const Keypad = props => {
   return (
     <div className={ styles.center }>
       <audio 
-        ref={audioRef} 
-        src={props.bank.url} 
-        id={props.bank.keyCode}
+        ref={ audioRef } 
+        src={ props.audio.url } 
         />
       <button 
-        onClick={handleClick}
+        onClick={ handleClick }
         className={ styles.button }
       >
-        {props.bank.keyTrigger}
+        {props.audio.keyTrigger}
       </button>
-      <span className={ styles.span }>{props.bank.id}</span>
+      <span className={ styles.span }>{props.audio.id}</span>
     </div>
   )
 }

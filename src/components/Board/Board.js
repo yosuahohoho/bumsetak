@@ -4,7 +4,8 @@ import Keypad from '../Keypad/Keypad'
 import styles from './board.module.css'
 
 const Board = () => {
-  const banksOne = [
+
+  const AUDIOS = [
     {
       keyCode: 81,
       keyTrigger: 'Q',
@@ -61,7 +62,7 @@ const Board = () => {
     }
   ]
   
-  let keypads = banksOne.map(bank => <Keypad bank={bank} key={bank.keyCode} />)
+  let keypads = AUDIOS.map(audio => <Keypad audio={ audio } key={ audio.id } />)
 
   return (
     <div className={ styles.board }>
