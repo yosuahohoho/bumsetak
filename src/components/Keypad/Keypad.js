@@ -25,18 +25,12 @@ const Keypad = props => {
   }
 
   return (
-    <div className={ styles.center }>
-      <audio 
-        ref={ audioRef } 
-        src={ props.audio.url } 
-        />
-      <button 
-        onClick={ handleClick }
-        className={ styles.button }
-      >
+    <div className={styles.center}>
+      <audio ref={audioRef} src={props.audio.url} />
+      <button onClick={handleClick} className={styles.button}>
         {props.audio.keyTrigger}
       </button>
-      <span className={ styles.span }>{props.audio.id}</span>
+      <span className={styles.span}>{props.audio.id}</span>
     </div>
   )
 }
