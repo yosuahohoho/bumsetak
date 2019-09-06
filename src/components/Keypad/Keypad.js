@@ -25,8 +25,8 @@ const Keypad = props => {
   }
 
   return (
-    <div className={styles.center}>
-      <audio ref={audioRef} src={props.audio.url} />
+    <div className={styles['drum-pad']}>
+      <audio ref={audioRef} src={props.audio.url} className='clip' id={props.audio.keyTrigger}/>
       <button onClick={handleClick} className={styles.button}>
         {props.audio.keyTrigger}
       </button>
