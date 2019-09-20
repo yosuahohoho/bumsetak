@@ -1,22 +1,30 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useCallback } from 'react'
 import styles from './keypad.module.css'
 
-const Keypad = props => {
+const Keypad = ({ audio, setDisplay }) => {
   const audioRef = useRef(null)
+  
+  const changeDisplay = useCallback(
+    () => {
+      setDisplay(audio.id)
+    }, [audio.id, setDisplay]
+  )
 
   useEffect(() => {
     document.addEventListener('keydown', e => {
-      if (e.keyCode === props.audio.keyCode) {
+      if (e.keyCode === audio.keyCode) {
         playSound()
+        changeDisplay()
       }
     })
 
     return document.removeEventListener('keydown', playSound)
-  }, [props.audio.keyCode])
+  }, [audio.keyCode, changeDisplay])
 
   const handleClick = e => {
     e.preventDefault()
     playSound()
+    changeDisplay()
   }
 
   const playSound = () => {
@@ -26,11 +34,16 @@ const Keypad = props => {
 
   return (
     <div className={styles['drum-pad']}>
-      <audio ref={audioRef} src={props.audio.url} className='clip' id={props.audio.keyTrigger}/>
+      <audio
+        ref={audioRef}
+        src={audio.url}
+        className='clip'
+        id={audio.keyTrigger}
+      />
       <button onClick={handleClick} className={styles.button}>
-        {props.audio.keyTrigger}
+        {audio.keyTrigger}
       </button>
-      <span className={styles.span}>{props.audio.id}</span>
+      <span className={styles.span}>{audio.id}</span>
     </div>
   )
 }
