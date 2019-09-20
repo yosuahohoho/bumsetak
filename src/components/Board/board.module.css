@@ -1,19 +1,36 @@
 .board {
   margin-top: 2rem;
+  padding: 1em;
   display: flex;
   flex-direction: column;
+  border: 1px solid #fff;
+  border-radius: 40px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
 }
 
 .display {
-  align-self: center;
   padding: 0.75em;
-  width: 70%;
+  width: 40%;
   font-size: 1.2rem;
   color: red;
   text-align: center;
+  text-transform: uppercase;
   background-color: #000;
   border: 1px solid #fff;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.brand {
+  align-self: center;
+  margin-top: 0;
   margin-bottom: 2.5rem;
+  margin-left: 5rem;
+  color: #fff;
 }
 
 .keypads {
