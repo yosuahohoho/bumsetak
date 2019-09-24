@@ -1,20 +1,29 @@
-import React, { useRef, useEffect, useCallback } from 'react'
+import React, { useRef, useState, useEffect, useCallback } from 'react'
 import styles from './keypad.module.css'
 
 const Keypad = ({ audio, setDisplay }) => {
+  const [isActive, setIsActive] = useState(false)
+
   const audioRef = useRef(null)
-  
-  const changeDisplay = useCallback(
-    () => {
-      setDisplay(audio.id)
-    }, [audio.id, setDisplay]
-  )
+  const playSound = () => {
+    audioRef.current.currentTime = 0
+    audioRef.current.play()
+  }
+
+  const changeDisplay = useCallback(() => {
+    setDisplay(audio.id)
+  }, [audio.id, setDisplay])
 
   useEffect(() => {
     document.addEventListener('keydown', e => {
       if (e.keyCode === audio.keyCode) {
+        setIsActive(true)
         playSound()
         changeDisplay()
+
+        setTimeout(() => {
+          setIsActive(false)
+        }, 100)
       }
     })
 
@@ -23,13 +32,13 @@ const Keypad = ({ audio, setDisplay }) => {
 
   const handleClick = e => {
     e.preventDefault()
+    setIsActive(true)
     playSound()
     changeDisplay()
-  }
 
-  const playSound = () => {
-    audioRef.current.currentTime = 0
-    audioRef.current.play()
+    setTimeout(() => {
+      setIsActive(false)
+    }, 100)
   }
 
   return (
@@ -40,7 +49,9 @@ const Keypad = ({ audio, setDisplay }) => {
         className='clip'
         id={audio.keyTrigger}
       />
-      <button onClick={handleClick} className={styles.button}>
+      <button
+        onClick={handleClick}
+        className={isActive ? styles.active : styles.button}>
         {audio.keyTrigger}
       </button>
       <span className={styles.span}>{audio.id}</span>

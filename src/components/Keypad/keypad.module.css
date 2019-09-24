@@ -6,10 +6,23 @@ button {
   padding: 1.5rem 2rem;
   font-size: 1.5rem;
   cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  box-shadow: 0 9px #999;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+.active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 span {
   display: block;
   color: #fff;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
 }
