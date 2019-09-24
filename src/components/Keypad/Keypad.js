@@ -51,7 +51,7 @@ const Keypad = ({ audio, setDisplay }) => {
       />
       <button
         onClick={handleClick}
-        className={isActive ? styles.active : styles.button}>
+        className={styles.button}>
         {audio.keyTrigger}
       </button>
       <span className={styles.span}>{audio.id}</span>
