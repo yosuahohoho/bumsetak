@@ -6,9 +6,9 @@ button {
   padding: 1.5rem 2rem;
   font-size: 1.5rem;
   cursor: pointer;
-  border: 2px solid #d32f2f;
+  border: 2px solid var(--main-color);
   background-color: transparent;
-  color: #d32f2f;
+  color: var(--main-color);
   border-radius: 15px;
   outline: none;
   -webkit-tap-highlight-color: transparent;
@@ -24,6 +24,6 @@ button:hover {
 
 span {
   display: block;
-  color: #d32f2f;
+  color: var(--main-color);
   margin-top: 0.8rem;
 }
