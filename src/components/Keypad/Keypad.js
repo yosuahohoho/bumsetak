@@ -5,41 +5,36 @@ const Keypad = ({ audio, setDisplay }) => {
   const [isActive, setIsActive] = useState(false)
 
   const audioRef = useRef(null)
-  const playSound = () => {
+  const setSound = () => {
     audioRef.current.currentTime = 0
     audioRef.current.play()
   }
-
-  const changeDisplay = useCallback(() => {
+  
+  const handleKeypadActive = useCallback(() => {
+    setIsActive(true)
+    setSound()
     setDisplay(audio.id)
+    
+    //use for scale transition effect
+    setTimeout(() => {
+      setIsActive(false)
+    }, 100)
   }, [audio.id, setDisplay])
+
+  const handleClick = e => {
+    e.preventDefault()
+    handleKeypadActive()
+  }
 
   useEffect(() => {
     document.addEventListener('keydown', e => {
       if (e.keyCode === audio.keyCode) {
-        setIsActive(true)
-        playSound()
-        changeDisplay()
-
-        setTimeout(() => {
-          setIsActive(false)
-        }, 100)
+        handleKeypadActive()
       }
     })
 
-    return document.removeEventListener('keydown', playSound)
-  }, [audio.keyCode, changeDisplay])
-
-  const handleClick = e => {
-    e.preventDefault()
-    setIsActive(true)
-    playSound()
-    changeDisplay()
-
-    setTimeout(() => {
-      setIsActive(false)
-    }, 100)
-  }
+    return document.removeEventListener('keydown', handleKeypadActive)
+  }, [audio.keyCode, handleKeypadActive])
 
   return (
     <div className={styles['drum-pad']}>
