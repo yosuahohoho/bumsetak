@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/bumsetak/static/css/main.eac9d512.chunk.css",
-    "main.js": "/bumsetak/static/js/main.bc8df505.chunk.js",
-    "main.js.map": "/bumsetak/static/js/main.bc8df505.chunk.js.map",
+    "main.css": "/bumsetak/static/css/main.0a56371e.chunk.css",
+    "main.js": "/bumsetak/static/js/main.c9a87259.chunk.js",
+    "main.js.map": "/bumsetak/static/js/main.c9a87259.chunk.js.map",
     "runtime~main.js": "/bumsetak/static/js/runtime~main.3a31b787.js",
     "runtime~main.js.map": "/bumsetak/static/js/runtime~main.3a31b787.js.map",
     "static/js/2.0933a6cc.chunk.js": "/bumsetak/static/js/2.0933a6cc.chunk.js",
     "static/js/2.0933a6cc.chunk.js.map": "/bumsetak/static/js/2.0933a6cc.chunk.js.map",
     "index.html": "/bumsetak/index.html",
-    "precache-manifest.fb11b980486b969ec51d3573f37812bb.js": "/bumsetak/precache-manifest.fb11b980486b969ec51d3573f37812bb.js",
+    "precache-manifest.a7c2b5c0c74054b2405bebfebe92540c.js": "/bumsetak/precache-manifest.a7c2b5c0c74054b2405bebfebe92540c.js",
     "service-worker.js": "/bumsetak/service-worker.js",
-    "static/css/main.eac9d512.chunk.css.map": "/bumsetak/static/css/main.eac9d512.chunk.css.map"
+    "static/css/main.0a56371e.chunk.css.map": "/bumsetak/static/css/main.0a56371e.chunk.css.map"
   }
 }
